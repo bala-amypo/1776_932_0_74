@@ -1,5 +1,5 @@
 
-package.com.example.demo.entity;
+package com.example.demo.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GeneratedType;
@@ -12,5 +12,11 @@ public class StudentEntity{
       private String name;
       private String email;
       private float cgpa;
+
+    public void setName(String name){
+        name =this.name;
+    }
+    public String getnme()
+          
 
 }
