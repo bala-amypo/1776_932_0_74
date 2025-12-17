@@ -44,6 +44,4 @@ public class StudentEntity{
     public String getCgpa(){
         return  this.cgpa;
     }
-          
-
 }
