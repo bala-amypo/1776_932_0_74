@@ -13,23 +13,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.StudentEntity;
 import com.example.demo.service.StudentService;
 
-
 @RestController
 public class StudentController {
 
     @Autowired
-    StudentService ser;
+    private StudentService ser;
 
     @PostMapping("/addStudents")
     public StudentEntity addStudents(@RequestBody StudentEntity student){
         return ser.addStudents(student);
     }
-    
+
     @GetMapping("/getStudents")
     public List<StudentEntity> getStudents() {
         return ser.getStudents();
     }
-    
+
     @GetMapping("/getStudent/{id}")
     public StudentEntity getStudentById(@PathVariable Long id) {
         return ser.getStudentById(id);
@@ -38,12 +37,11 @@ public class StudentController {
     @DeleteMapping("/deleteStudent/{id}")
     public String deleteStudentById(@PathVariable Long id) {
         StudentEntity student = ser.getStudentById(id);
-        if(student.isPresent()) {
+        if(student != null) {  
             ser.deleteStudentById(id);
             return "Student deleted successfully.";
         } else {
             return "Student not found.";
         }
     }
-
 }
