@@ -20,7 +20,7 @@ public class StudentEntity {
     }
 
     public StudentEntity(long id, String name, String email, float cgpa) {
-        this.id = id;
+        //this.id = id;
         this.name = name;
         this.email = email;
         this.cgpa = cgpa;
