@@ -1,19 +1,27 @@
 package com.example.demo.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 import java.time.LocalDateTime;
 
-@Data
+@Entity
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class RouteOptimizationResult {
-    private Long id;
-    private Shipment shipment;
-    private Double optimizedDistanceKm;
-    private Double estimatedFuelUsageL;
-    private LocalDateTime generatedAt;
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+
+@ManyToOne
+private Shipment shipment;
+
+private Double optimizedDistanceKm;
+
+private Double estimatedFuelUsageL;
+
+private LocalDateTime generatedAt;
 }

@@ -1,19 +1,26 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.*;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
+@Entity
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    private Long id;
-    private String name;
-    private String email;
-    private String password;
-    private String role;
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+
+@Column(unique = true)
+private String email;
+
+private String name;
+
+private String password;
+
+private String role;
 }
