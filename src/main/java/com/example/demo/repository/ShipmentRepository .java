@@ -1,4 +1,4 @@
-
+package com.example.demo.repository;
 
 public interface ShipmentRepository {
     Shipment save(Shipment s);
