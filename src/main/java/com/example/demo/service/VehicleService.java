@@ -1,7 +1,13 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.Vehicle;
+import java.util.List;
+
 public interface VehicleService {
-    Vehicle addVehicle(Long userId, Vehicle v);
+
+    Vehicle addVehicle(Long userId, Vehicle vehicle);
+
     Vehicle findById(Long id);
-    java.util.List<Vehicle> getVehiclesByUser(Long userId);
+
+    List<Vehicle> getVehiclesByUser(Long userId);
 }
