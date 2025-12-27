@@ -1,4 +1,4 @@
-
+package com.example.demo.service;
 
 public interface ShipmentService {
     Shipment createShipment(Long vehicleId, Shipment s);
