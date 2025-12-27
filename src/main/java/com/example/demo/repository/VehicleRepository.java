@@ -1,5 +1,6 @@
 
 package com.example.demo.repository;
+import java.util.*;
 public interface VehicleRepository {
     Vehicle save(Vehicle v);
     Optional<Vehicle> findById(Long id);
